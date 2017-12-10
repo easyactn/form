@@ -6,7 +6,8 @@ var Types = keystone.Field.Types;
  * ==========
  */
 var Event = new keystone.List('Event', {
-	map: { name: 'title' }
+	map: { name: 'title' },
+	defaultSort: 'date.begin'
 });
 
 Event.add({
@@ -30,13 +31,13 @@ Event.add({
 		date: {
 			begin: { type: Types.Number, initial: true, required: true, label: 'Start' },
 			end: { type: Types.Number, initial: true, required: true },
-			reccurence: { type: Types.Boolean, default: false, required: true },
+			reccurence: { type: Types.Boolean, default: false, label: 'Reccurent Event?' },
 			rroutine: { type: String, label: 'Reccurence Routine' },
 			rend: { type: Types.Number, label: 'Reccurence End Date' }
 		},
 	},
 	'More Information', {
-		price: { type: Types.Number, default: 0, required: true },
+		price: { type: Types.Number, initial: true, default: 0, required: true },
 		tickets: { type: Types.Url, label: 'Ticket Link' },
 		categories: { type: Types.TextArray },
 	},
