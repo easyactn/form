@@ -5,3 +5,7 @@ block content
 		img(src='/images/logo.svg', width='160')
 		h1 Übersicht
 		p Herzlich willkommen, #{username}!
+
+		ul
+			for event, i in events
+				li= event.title

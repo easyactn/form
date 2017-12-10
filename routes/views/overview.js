@@ -5,10 +5,20 @@ exports = module.exports = function (req, res) {
 	var view = new keystone.View(req, res);
 	var locals = res.locals;
 
-	// locals.section is used to set the currently selected
-	// item in the header navigation.
 	locals.section = 'overview';
 
-	// Render the view
-	view.render('overview', { username: req.user.name.first});
+	var limit = 50;
+	Event = keystone.list('Event');
+ 
+ 	Event.model.find()
+   		.sort('date.begin')
+  		.limit(limit)
+  		.exec(function(err, events) {
+     		if (err) {
+    			console.log('Error: '+err);
+     		}
+     		else if (events) {
+     			view.render('overview', { username: req.user.name.first, events: events});
+     		}
+	   	});
 };
