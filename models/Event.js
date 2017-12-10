@@ -54,5 +54,5 @@ Event.add({
 /**
  * Registration
  */
-//Event.defaultColumns = 'name, email, isAdmin';
+Event.defaultColumns = 'title, description.short';
 Event.register();
