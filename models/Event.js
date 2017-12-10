@@ -12,10 +12,10 @@ var Event = new keystone.List('Event', {
 Event.add({
 	title: { type: String, index: true, initial: true, required: true },
 	description: {
-		short: { type: Types.Text, initial: false, index: true },
-		long: { type: Types.Textarea, initial: false },
+		short: { type: Types.Text, initial: false, index: true, label: 'Short Description' },
+		long: { type: Types.Textarea, initial: false, label: 'Full Description' },
 	},
-	website: { type: Types.Url, initial: true }, },
+	website: { type: Types.Url, initial: true, label: 'Event Website' }, },
 	'Image', {
 		image: {
 			description: { type: String, initial: true },
@@ -28,16 +28,16 @@ Event.add({
 	},
 	'Date + Reccurence', {
 		date: {
-			begin: { type: Types.Number, initial: true, required: true },
+			begin: { type: Types.Number, initial: true, required: true, label: 'Start' },
 			end: { type: Types.Number, initial: true, required: true },
 			reccurence: { type: Types.Boolean, default: false, required: true },
-			rroutine: { type: String },
-			rend: { type: Types.Number }
+			rroutine: { type: String, label: 'Reccurence Routine' },
+			rend: { type: Types.Number, label: 'Reccurence End Date' }
 		},
 	},
 	'More Information', {
 		price: { type: Types.Number, default: 0, required: true },
-		tickets: { type: Types.Url },
+		tickets: { type: Types.Url, label: 'Ticket Link' },
 		categories: { type: Types.TextArray },
 	},
 	'Organizer', {
