@@ -2,7 +2,7 @@ var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
 /**
- * User Model
+ * Event Model
  * ==========
  */
 var Event = new keystone.List('Event', {
