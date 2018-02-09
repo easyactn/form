@@ -44,6 +44,12 @@ Event.add({
 	'Organizer', {
 		organizer: { type: Types.Relationship, ref: 'Organizer', initial: true },
 	},
+	
+	/* Status */
+	{
+		status: { type: Types.Number, required: true, default: 0 },
+		approvedBy: { type: Types.Relationship, ref: 'User', hidden: true }
+	},
 );
 
 
