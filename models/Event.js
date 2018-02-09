@@ -42,12 +42,7 @@ Event.add({
 		categories: { type: Types.TextArray },
 	},
 	'Organizer', {
-		organizer: {
-			name: { type: String, initial: true, required: true },
-			contact: { type: Types.Url, initial: true, required: true },
-			description: { type: String },
-			image: { type: Types.Url }
-		},
+		organizer: { type: Types.Relationship, ref: 'Organizer' },
 	},
 );
 
