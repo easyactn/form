@@ -36,4 +36,5 @@ exports = module.exports = function (app) {
 	// Views
 	app.get('/', routes.views.index);
 	app.get('/overview', middleware.requireUser, routes.views.overview);
+	app.get('/event/:id/:title', routes.views.event);
 };
