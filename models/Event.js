@@ -42,7 +42,7 @@ Event.add({
 		categories: { type: Types.TextArray },
 	},
 	'Organizer', {
-		organizer: { type: Types.Relationship, ref: 'Organizer' },
+		organizer: { type: Types.Relationship, ref: 'Organizer', initial: true },
 	},
 );
 
