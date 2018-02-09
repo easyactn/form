@@ -47,7 +47,7 @@ Event.add({
 	
 	/* Status */
 	{
-		status: { type: Types.Number, required: true, default: 0 },
+		status: { type: Types.Number, default: 0 },
 		approvedBy: { type: Types.Relationship, ref: 'User', hidden: true }
 	},
 );
